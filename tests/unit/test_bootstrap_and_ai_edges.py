@@ -161,6 +161,8 @@ def test_build_container_composes_configured_provider_adapters(
     monkeypatch.setattr(bootstrap, "QdrantVectorStore", _FakeQdrantStore)
     monkeypatch.setattr(bootstrap, "VectorKnowledgeRetriever", _FakeVectorRetriever)
     settings = Settings(
+        llm_enabled=True,
+        vector_store_enabled=True,
         openai_api_key=SecretStr("test-openai-key"),
         openai_model="test-generation-model",
         openai_embedding_model="test-embedding-model",
