@@ -1,0 +1,81 @@
+name: property-intelligence-engine
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: property-intelligence-engine:local
+    init: true
+    restart: unless-stopped
+    environment:
+      - PIE_APP_NAME=${PIE_APP_NAME:-Property Intelligence Engine}
+      - PIE_APP_VERSION=${PIE_APP_VERSION:-0.1.0}
+      - PIE_ENVIRONMENT=${PIE_ENVIRONMENT:-local}
+      - PIE_API_PREFIX=${PIE_API_PREFIX:-/api/v1}
+      - PIE_DOCS_ENABLED=${PIE_DOCS_ENABLED:-true}
+      - PIE_AUTH_ENABLED=${PIE_AUTH_ENABLED:-false}
+      - PIE_API_KEY=${PIE_API_KEY:-}
+      - PIE_ALLOWED_HOSTS=${PIE_ALLOWED_HOSTS:-["localhost","127.0.0.1"]}
+      - PIE_CORS_ORIGINS=${PIE_CORS_ORIGINS:-[]}
+      - PIE_MAX_REQUEST_BYTES=${PIE_MAX_REQUEST_BYTES:-65536}
+      - PIE_LLM_ENABLED=${PIE_LLM_ENABLED:-true}
+      - PIE_LLM_REQUIRED=${PIE_LLM_REQUIRED:-false}
+      - PIE_OPENAI_API_KEY=${PIE_OPENAI_API_KEY:-}
+      - PIE_OPENAI_MODEL=${PIE_OPENAI_MODEL:-gpt-5.6-sol}
+      - PIE_OPENAI_EMBEDDING_MODEL=${PIE_OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      - PIE_EMBEDDING_DIMENSIONS=${PIE_EMBEDDING_DIMENSIONS:-1536}
+      - PIE_LLM_TIMEOUT_SECONDS=${PIE_LLM_TIMEOUT_SECONDS:-45}
+      - PIE_LLM_MAX_RETRIES=${PIE_LLM_MAX_RETRIES:-2}
+      - PIE_VECTOR_STORE_ENABLED=${PIE_VECTOR_STORE_ENABLED:-true}
+      - PIE_VECTOR_STORE_REQUIRED=${PIE_VECTOR_STORE_REQUIRED:-false}
+      - PIE_QDRANT_URL=${PIE_COMPOSE_QDRANT_URL:-http://qdrant:6333}
+      - PIE_QDRANT_API_KEY=${PIE_QDRANT_API_KEY:-}
+      - PIE_QDRANT_COLLECTION=${PIE_QDRANT_COLLECTION:-listing_guidance_v1}
+      - PIE_QDRANT_TIMEOUT_SECONDS=${PIE_QDRANT_TIMEOUT_SECONDS:-10}
+      - PIE_RETRIEVAL_LIMIT=${PIE_RETRIEVAL_LIMIT:-5}
+      - PIE_SENTRY_DSN=${PIE_SENTRY_DSN:-}
+      - PIE_SENTRY_TRACES_SAMPLE_RATE=${PIE_SENTRY_TRACES_SAMPLE_RATE:-0.0}
+      - PIE_LOG_LEVEL=${PIE_LOG_LEVEL:-INFO}
+      - PIE_LOG_JSON=${PIE_LOG_JSON:-true}
+    ports:
+      - "${PIE_BIND_HOST:-127.0.0.1}:${PIE_API_PORT:-8000}:8000"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+
+  qdrant:
+    image: qdrant/qdrant:v1.18.3@sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+    restart: unless-stopped
+    environment:
+      QDRANT__LOG_LEVEL: INFO
+      QDRANT__TELEMETRY_DISABLED: "true"
+      QDRANT__SERVICE__API_KEY: ${PIE_QDRANT_API_KEY:-}
+    ports:
+      - "127.0.0.1:${QDRANT_HTTP_PORT:-6333}:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+
+volumes:
+  qdrant_data:
+    name: property-intelligence-qdrant-data

@@ -1,0 +1,23 @@
+{
+  "title": "Ocean View Condo in Miami",
+  "description": "Welcome to a bright two-bedroom condo for four guests near Miami Beach. Enjoy the private balcony, fast Wi-Fi, dedicated workspace, full kitchen, and one bathroom. Self check-in makes arrival easy, and free parking is included. The building has stairs, and quiet hours begin at 10 PM.",
+  "amenities": [
+    "Wi-Fi",
+    "Kitchen",
+    "Dedicated workspace",
+    "Free parking",
+    "Smoke alarm",
+    "Carbon monoxide alarm",
+    "Fire extinguisher",
+    "First aid kit",
+    "Self check-in"
+  ],
+  "property_type": "Condo",
+  "location": {
+    "city": "Miami",
+    "country": "US",
+    "region": "Florida",
+    "neighborhood": "Miami Beach"
+  },
+  "language": "en"
+}

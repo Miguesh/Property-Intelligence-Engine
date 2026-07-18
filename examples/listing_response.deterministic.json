@@ -1,0 +1,207 @@
+{
+  "analysis_id": "e34f6747-adda-407d-ab64-dcc7e4e64def",
+  "listing_quality_score": 71.1,
+  "seo_score": 86.5,
+  "readability_score": 69.0,
+  "score_details": {
+    "listing_quality": {
+      "value": 71.1,
+      "components": [
+        {
+          "name": "content_completeness",
+          "score": 60.0,
+          "weight": 0.3,
+          "rationale": "Checks substantive copy, property/location context, configuration, audience, and policies."
+        },
+        {
+          "name": "amenity_coverage",
+          "score": 74.6,
+          "weight": 0.2,
+          "rationale": "Uses weighted universal and property-type amenity groups; alternatives satisfy a group once."
+        },
+        {
+          "name": "value_proposition",
+          "score": 65.0,
+          "weight": 0.2,
+          "rationale": "Rewards concrete facts, relevant features, guest benefits, and useful local context."
+        },
+        {
+          "name": "guest_clarity",
+          "score": 75.0,
+          "weight": 0.15,
+          "rationale": "Checks layout, arrival, transport, rules, and expectation-setting information."
+        },
+        {
+          "name": "trust_and_hygiene",
+          "score": 100.0,
+          "weight": 0.1,
+          "rationale": "Checks listed safety items, professional mechanics, disclosures, and off-platform signals."
+        },
+        {
+          "name": "presentation",
+          "score": 78.9,
+          "weight": 0.05,
+          "rationale": "Combines readability (60%) and title utility (40%)."
+        }
+      ],
+      "methodology": "deterministic-2026.1"
+    },
+    "seo": {
+      "value": 86.5,
+      "components": [
+        {
+          "name": "title_relevance",
+          "score": 95.0,
+          "weight": 0.3,
+          "rationale": "Measures title length, property/location relevance, differentiators, and mechanics."
+        },
+        {
+          "name": "description_relevance",
+          "score": 82.5,
+          "weight": 0.4,
+          "rationale": "Measures useful search concepts in the description and opening summary."
+        },
+        {
+          "name": "search_breadth",
+          "score": 100.0,
+          "weight": 0.2,
+          "rationale": "Measures distinct amenity categories, local context, and lexical variety."
+        },
+        {
+          "name": "structure_and_hygiene",
+          "score": 50.0,
+          "weight": 0.1,
+          "rationale": "Rewards scannable structure and absence of keyword or punctuation spam."
+        }
+      ],
+      "methodology": "deterministic-2026.1"
+    },
+    "readability": {
+      "value": 69.0,
+      "components": [
+        {
+          "name": "flesch_reading_ease",
+          "score": 61.9,
+          "weight": 0.5,
+          "rationale": "English Flesch Reading Ease is 61.9."
+        },
+        {
+          "name": "sentence_length",
+          "score": 100.0,
+          "weight": 0.2,
+          "rationale": "Average sentence length is 11.5 words."
+        },
+        {
+          "name": "paragraph_quality",
+          "score": 60.0,
+          "weight": 0.15,
+          "rationale": "The description has 1 paragraph(s)."
+        },
+        {
+          "name": "skimmability",
+          "score": 40.0,
+          "weight": 0.1,
+          "rationale": "Rewards useful paragraphs, bullets, and descriptive headings."
+        },
+        {
+          "name": "mechanics",
+          "score": 100.0,
+          "weight": 0.05,
+          "rationale": "Checks capitalization, repeated punctuation, spacing, and sentence endings."
+        }
+      ],
+      "methodology": "deterministic-2026.1"
+    }
+  },
+  "strengths": [
+    "The copy clearly identifies both the property type and location.",
+    "Distinctive features are clearly listed: outdoor space, parking, workspace.",
+    "The submitted amenities cover most core connectivity and safety expectations.",
+    "The title and description provide strong content-discoverability signals."
+  ],
+  "weaknesses": [
+    "The description is too short to answer common guest questions.",
+    "The description does not state verified guest capacity, a verified bedroom or bed layout, and a verified bathroom count."
+  ],
+  "missing_amenities": [
+    {
+      "name": "Laundry facilities",
+      "priority": "medium",
+      "reason": "Not listed: Laundry details help guests evaluate longer and family stays. Verify that it is available before adding it to the listing.",
+      "confidence": 0.78
+    }
+  ],
+  "recommended_improvements": [
+    {
+      "category": "description",
+      "priority": "high",
+      "recommendation": "Expand the description to roughly 100 to 350 useful words covering layout, experience, arrival, and location.",
+      "rationale": "The current copy does not provide enough evidence for a confident guest decision."
+    },
+    {
+      "category": "content",
+      "priority": "high",
+      "recommendation": "State verified guest capacity, a verified bedroom or bed layout, and a verified bathroom count explicitly.",
+      "rationale": "Concrete configuration details reduce ambiguity and improve search relevance."
+    },
+    {
+      "category": "readability",
+      "priority": "medium",
+      "recommendation": "Use short paragraphs and descriptive sections for the space, amenities, access, and location.",
+      "rationale": "Scannable structure helps guests find important details quickly."
+    }
+  ],
+  "better_title_suggestions": [
+    "Condo Stay in Miami",
+    "Wi-fi Condo in Miami",
+    "Condo in Miami Beach, Miami"
+  ],
+  "better_descriptions": [
+    "Welcome to a bright two-bedroom condo for four guests near Miami Beach. Enjoy the private balcony, fast Wi-Fi, dedicated workspace, full kitchen, and one bathroom. Self check-in makes arrival easy, and free parking is included. The building has stairs, and quiet hours begin at 10 PM. The property is located in Miami Beach, Miami, Florida, US. Included amenities: Wi-Fi, Kitchen, Dedicated workspace, Free parking, Smoke alarm, Carbon monoxide alarm, Fire extinguisher, First aid kit.",
+    "Make this condo your base for a stay in Miami. Welcome to a bright two-bedroom condo for four guests near Miami Beach. Enjoy the private balcony, fast Wi-Fi, dedicated workspace, full kitchen, and one bathroom. Self check-in makes arrival easy, and free parking is included. The building has stairs, and quiet hours begin at 10 PM. Included amenities: Wi-Fi, Kitchen, Dedicated workspace, Free parking, Smoke alarm, Carbon monoxide alarm, Fire extinguisher, First aid kit. Book with confidence after reviewing the complete listing details and policies."
+  ],
+  "suggested_tags": [
+    "Condo",
+    "Miami",
+    "Miami Beach",
+    "Florida",
+    "US",
+    "Wi-Fi",
+    "Kitchen",
+    "Dedicated workspace",
+    "Free parking",
+    "Smoke alarm",
+    "Carbon monoxide alarm",
+    "Fire extinguisher"
+  ],
+  "generation_source": "deterministic",
+  "prompt_version": "deterministic-copy-v1",
+  "knowledge_references": [
+    {
+      "identifier": "amenity-kitchen-v1",
+      "source": "Property Intelligence amenity guidance",
+      "score": 0.984465
+    },
+    {
+      "identifier": "amenity-parking-v1",
+      "source": "Property Intelligence amenity guidance",
+      "score": 0.662372
+    },
+    {
+      "identifier": "amenity-workspace-v1",
+      "source": "Property Intelligence amenity guidance",
+      "score": 0.5849
+    },
+    {
+      "identifier": "amenity-wifi-clarity-v1",
+      "source": "Property Intelligence amenity guidance",
+      "score": 0.4349
+    },
+    {
+      "identifier": "stay-expectations-v1",
+      "source": "Property Intelligence trust guidance",
+      "score": 0.421391
+    }
+  ],
+  "warnings": []
+}

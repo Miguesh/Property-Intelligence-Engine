@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "corpus_id": "property-intelligence-listing-guidance",
+  "corpus_version": "1.0.0",
+  "documents": [
+    {
+      "identifier": "title-lead-with-specifics-v1",
+      "content": "Lead a listing title with the property type, verified location, or strongest included amenity. A guest should understand the stay's main value without opening the description. Keep phrasing natural and specific.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "title",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "title-avoid-noise-v1",
+      "content": "Avoid all-caps words, repeated punctuation, emoji strings, vague labels such as 'nice place,' and duplicated location terms in titles. These patterns reduce clarity and can resemble keyword stuffing.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "title",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "seo-natural-search-phrases-v1",
+      "content": "Use natural search phrases that combine a verified destination, property type, and meaningful feature. Place important terms in the title and opening paragraph, but do not repeat them mechanically throughout the copy.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "seo",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "description-opening-value-v1",
+      "content": "The first two sentences should explain who the stay suits, where it is, and its strongest verified benefit. Do not spend the opening on generic welcomes or unsupported superlatives.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "description",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "description-scan-structure-v1",
+      "content": "Organize longer descriptions around the space, included amenities, sleeping arrangements, location context, and essential stay details. Short paragraphs and informative sentences make mobile reading easier.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "readability",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "copy-factual-claims-v1",
+      "content": "Every claim must be traceable to submitted listing facts. Never invent views, walking times, distances, ratings, recent renovations, accessibility, or included amenities. When a detail is unknown, omit it or ask the host to verify it.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "accuracy",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "readability-plain-language-v1",
+      "content": "Prefer concrete verbs, familiar words, and varied sentence lengths. Remove filler, repeated adjectives, and long sentences carrying several unrelated ideas. Explain uncommon property terms when guests need them.",
+      "source": "Property Intelligence editorial guidance",
+      "metadata": {
+        "category": "readability",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-wifi-clarity-v1",
+      "content": "If Wi-Fi is available, name it clearly and add a verified speed only when a recent measurement supports the claim. Reliable internet information is especially useful for remote-work and longer-stay guests.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "wifi",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-workspace-v1",
+      "content": "A workspace should identify the actual setup, such as a desk or table, suitable chair, nearby outlet, and lighting. Do not call a surface a dedicated workspace unless the submitted listing supports that description.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "dedicated workspace",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-kitchen-v1",
+      "content": "For properties with a kitchen, mention the included cooking essentials guests can actually use. Distinguish a full kitchen from a kitchenette and avoid implying that appliances or supplies are present when they are not listed.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "kitchen",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-parking-v1",
+      "content": "Parking copy should state whether parking is included, paid, reserved, shared, street-based, or subject to size limits. Only state availability and access conditions that the host has verified.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "parking",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-climate-control-v1",
+      "content": "Clarify whether air conditioning or heating serves the entire property or only selected rooms. Guests make comfort decisions from these details, so avoid a broad climate-control claim when coverage is limited.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "air conditioning",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "amenity-laundry-v1",
+      "content": "When laundry is available, state whether the washer and dryer are private or shared and whether access is inside the unit or elsewhere on the property. Mention fees only when verified.",
+      "source": "Property Intelligence amenity guidance",
+      "metadata": {
+        "category": "amenity",
+        "amenity": "washer",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "safety-amenities-v1",
+      "content": "Hosts should verify and accurately disclose essential safety equipment such as smoke alarms and carbon-monoxide alarms where appropriate or required. Never generate a safety-equipment claim from general guidance alone.",
+      "source": "Property Intelligence safety guidance",
+      "metadata": {
+        "category": "safety",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "accessibility-specifics-v1",
+      "content": "Describe accessibility through verified physical facts, such as step-free entry, doorway width, elevator access, or bathroom features. Avoid broad labels like 'fully accessible' unless the property has been assessed against a defined standard.",
+      "source": "Property Intelligence accessibility guidance",
+      "metadata": {
+        "category": "accessibility",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "family-stay-specifics-v1",
+      "content": "Family-oriented copy should name verified practical features such as a crib, high chair, child-safe layout, laundry, or separate sleeping areas. Avoid promising that a property is suitable for every child or age group.",
+      "source": "Property Intelligence audience guidance",
+      "metadata": {
+        "category": "audience",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "location-context-v1",
+      "content": "Provide useful location context with verified neighborhood or landmark names. Use travel times or distances only when measured from a reliable source, and identify the transportation mode when relevant.",
+      "source": "Property Intelligence location guidance",
+      "metadata": {
+        "category": "location",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "stay-expectations-v1",
+      "content": "Set expectations about access, shared areas, stairs, noise considerations, check-in method, and important house rules when those facts are supplied. Clear constraints build trust and reduce avoidable guest surprises.",
+      "source": "Property Intelligence trust guidance",
+      "metadata": {
+        "category": "trust",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    },
+    {
+      "identifier": "tags-controlled-vocabulary-v1",
+      "content": "Suggested tags should be short, factual, and useful for classification. Prefer the verified property type, destination, neighborhood, guest-relevant amenities, and stay attributes; remove duplicates and unsupported marketing claims.",
+      "source": "Property Intelligence taxonomy guidance",
+      "metadata": {
+        "category": "tags",
+        "property_type": "all",
+        "language": "en",
+        "guidance_version": "1"
+      }
+    }
+  ]
+}

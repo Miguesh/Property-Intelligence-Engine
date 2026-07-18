@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sparse-apartment",
+    "listing": {
+      "title": "Nice Place",
+      "description": "A nice place to stay.",
+      "amenities": [],
+      "property_type": "Apartment",
+      "location": {"city": "Miami", "region": "Florida", "country": "USA"}
+    },
+    "expect": {
+      "quality_max": 40,
+      "seo_max": 40,
+      "minimum_weaknesses": 3
+    }
+  },
+  {
+    "id": "complete-condo",
+    "listing": {
+      "title": "Waterfront Miami Condo with Pool & Workspace",
+      "description": "Modern waterfront condo in Miami with an ocean view, private balcony, pool, fast Wi-Fi, and a dedicated workspace. This two-bedroom, two-bathroom home has three beds and sleeps six guests, making it ideal for families and remote work.\n\nGuests use self check-in with a smart lock, free parking, a full kitchen, washer, dryer, and air conditioning. Walk five minutes to the beach and drive fifteen minutes to Miami International Airport. Please note that the building has an elevator and quiet hours after 10 PM. No parties or smoking. Safety amenities include a smoke alarm, carbon monoxide alarm, fire extinguisher, and first-aid kit.",
+      "amenities": ["Wi-Fi", "Smoke alarm", "Carbon monoxide alarm", "Fire extinguisher", "First aid kit", "Air conditioning", "Smart lock", "Kitchen", "Refrigerator", "Cooking basics", "Washer", "Dryer", "Free parking", "Pool", "Ocean view", "Balcony", "Dedicated workspace"],
+      "property_type": "Condo",
+      "location": {"city": "Miami", "region": "Florida", "country": "USA"}
+    },
+    "expect": {
+      "quality_min": 80,
+      "seo_min": 75,
+      "readability_min": 60
+    }
+  },
+  {
+    "id": "negated-parking",
+    "listing": {
+      "title": "Downtown Miami Apartment",
+      "description": "A simple downtown apartment for two guests with fast Wi-Fi. There is no parking available and no swimming pool. Guests use self check-in, and quiet hours begin at 10 PM.",
+      "amenities": ["Wi-Fi", "Self check-in"],
+      "property_type": "Apartment",
+      "location": {"city": "Miami", "region": "Florida", "country": "USA"}
+    },
+    "expect": {
+      "must_recommend": ["Smoke alarm", "Fire extinguisher"],
+      "must_not_strengthen": ["parking", "pool"]
+    }
+  }
+]

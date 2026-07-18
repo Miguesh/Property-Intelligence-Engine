@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.12"
+          - "3.13"
+    env:
+      PIE_ENVIRONMENT: test
+      PIE_LLM_ENABLED: "false"
+      PIE_VECTOR_STORE_ENABLED: "false"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+
+      - name: Install project and development dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --no-deps --requirement requirements-dev.lock
+          python -m pip install --no-deps --editable .
+          python -m pip check
+
+      - name: Check formatting and lint
+        run: |
+          ruff format --check .
+          ruff check .
+
+      - name: Run static type checks
+        run: mypy
+
+      - name: Run tests with coverage
+        run: >-
+          pytest -m "not live"
+          --cov=property_intelligence
+          --cov-report=term-missing
+          --cov-report=xml
+
+  container:
+    name: Container build and smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Validate and build image
+        run: |
+          docker build --check .
+          docker build --tag property-intelligence-engine:ci .
+
+      - name: Run key-free container smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          trap 'docker rm --force property-intelligence-engine-ci >/dev/null 2>&1 || true' EXIT
+          docker run --detach \
+            --name property-intelligence-engine-ci \
+            --read-only \
+            --tmpfs /tmp:size=64m,mode=1777 \
+            --cap-drop ALL \
+            --security-opt no-new-privileges:true \
+            --publish 127.0.0.1:8000:8000 \
+            property-intelligence-engine:ci
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8000/health/ready >/dev/null; then
+              break
+            fi
+            if [[ "$attempt" == "30" ]]; then
+              docker logs property-intelligence-engine-ci
+              exit 1
+            fi
+            sleep 2
+          done
+          curl --fail --silent \
+            --header 'Content-Type: application/json' \
+            --data @examples/listing_request.json \
+            http://127.0.0.1:8000/api/v1/analyses \
+            | python -c \
+              'import json,sys; d=json.load(sys.stdin); assert len(d["better_title_suggestions"]) == 3; assert len(d["better_descriptions"]) == 2; assert 8 <= len(d["suggested_tags"]) <= 12'
+          test "$(docker exec property-intelligence-engine-ci id -u)" = "10001"
+          docker exec property-intelligence-engine-ci python -m pip check
